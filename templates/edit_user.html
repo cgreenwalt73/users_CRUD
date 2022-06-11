@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <title>Edit</title>
+</head>
+<body class="bg-dark text-center">
+    <nav>
+        <p class="display-1 text-white">Edit User {{user_to_update.id}}</p>
+        <a href="/" class="text-info">Home</a>
+    </nav>
+    <form action="/user/update" method="post">
+        <input type="hidden" name="id" value="{{user_to_update.id}}">
+        <div class="d-flex justify-content-center m-4">
+            <label class="text-white text-nowrap mr-4">
+                First Name:
+                <input type="text" name="first_name" value="{{user_to_update.first_name}}">
+            </label>
+        </div>
+        <div class="d-flex justify-content-center m-4">
+            <label class="text-white text-nowrap mr-4">
+                Last Name:
+                <input type="text" name="last_name" value="{{user_to_update.last_name}}">
+            </label>
+        </div>
+        <div class="d-flex justify-content-center m-4">
+            <label class="text-white text-nowrap mr-4">
+                Email:
+                <input type="text" name="email" value="{{user_to_update.email}}">
+            </label>
+        </div>
+        <input type="submit" class="btn bg-info text-white" value="Update">
+        <a href="/show/{{user_to_update.id}}" class="text-info">Show User</a>
+    </form>
+</body>
+</html>
